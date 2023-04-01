@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :bookings
   resources :services
   resources :usrs
   
@@ -19,4 +20,10 @@ Rails.application.routes.draw do
   get '/services/:id', to: 'services#show'
   patch '/services/:id', to: 'services#update'
   delete '/services/:id', to: 'services#destroy'
+  # Booking Routes
+  get '/bookings', to: 'bookings#index'
+  post '/bookings', to: 'bookings#create'
+  get '/bookings/:id', to: 'bookings#show'
+  patch '/bookings/:id', to: 'bookings#update'
+  delete '/bookings/:id', to: 'bookings#destroy'
 end

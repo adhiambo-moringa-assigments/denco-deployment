@@ -10,7 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_04_01_120754) do
+ActiveRecord::Schema[7.0].define(version: 2023_04_01_121610) do
+  create_table "bookings", force: :cascade do |t|
+    t.string "name"
+    t.string "email"
+    t.string "phone"
+    t.string "moving_to"
+    t.string "moving_from"
+    t.string "moving_date"
+    t.string "house_size"
+    t.integer "user_id", null: false
+    t.integer "service_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["service_id"], name: "index_bookings_on_service_id"
+    t.index ["user_id"], name: "index_bookings_on_user_id"
+  end
+
   create_table "services", force: :cascade do |t|
     t.string "name"
     t.text "description"
@@ -28,4 +44,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_01_120754) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "bookings", "services"
+  add_foreign_key "bookings", "users"
 end
