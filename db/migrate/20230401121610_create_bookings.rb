@@ -8,7 +8,7 @@ class CreateBookings < ActiveRecord::Migration[7.0]
       t.string :moving_from
       t.string :moving_date
       t.string :house_size
-      t.references :user, null: false, foreign_key: true
+      t.references :usr, null: false, foreign_key: true
       t.references :service, null: false, foreign_key: true
 
 

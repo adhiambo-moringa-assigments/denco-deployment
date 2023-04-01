@@ -19,12 +19,12 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_01_121610) do
     t.string "moving_from"
     t.string "moving_date"
     t.string "house_size"
-    t.integer "user_id", null: false
+    t.integer "usr_id", null: false
     t.integer "service_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["service_id"], name: "index_bookings_on_service_id"
-    t.index ["user_id"], name: "index_bookings_on_user_id"
+    t.index ["usr_id"], name: "index_bookings_on_usr_id"
   end
 
   create_table "services", force: :cascade do |t|
@@ -45,5 +45,5 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_01_121610) do
   end
 
   add_foreign_key "bookings", "services"
-  add_foreign_key "bookings", "users"
+  add_foreign_key "bookings", "usrs"
 end
