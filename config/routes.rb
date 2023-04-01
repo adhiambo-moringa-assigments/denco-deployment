@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  
+  resources :books
+
   post '/login', to: "sessions#create"
   post '/signup', to: "usrs#create"
   delete '/logout', to: "sessions#destroy"
@@ -21,10 +22,12 @@ Rails.application.routes.draw do
   get '/services/:id', to: 'services#show'
   patch '/services/:id', to: 'services#update'
   delete '/services/:id', to: 'services#destroy'
-  # Booking Routes
-  get '/bookings', to: 'bookings#index'
-  post '/bookings', to: 'bookings#create'
-  get '/bookings/:id', to: 'bookings#show'
-  patch '/bookings/:id', to: 'bookings#update'
-  delete '/bookings/:id', to: 'bookings#destroy'
+  # Books Routes
+  get '/books', to: 'books#index'
+  post '/books', to: 'books#create'
+  get '/books/:id', to: 'books#show'
+  patch '/books/:id', to: 'books#update'
+  delete '/books/:id', to: 'books#destroy'
+
+ 
 end
