@@ -1,18 +1,18 @@
 databases:
-  - name: mysite
-    databaseName: mysite
-    user: mysite
+  - name: pizzas
+    databaseName: pizzas_xe87
+    user: pizzas_xe87_user
 
 services:
   - type: web
-    name: mysite
+    name: denco
     env: ruby
     buildCommand: "./bin/render-build.sh"
     startCommand: "bundle exec puma -C config/puma.rb"
     envVars:
       - key: DATABASE_URL
         fromDatabase:
-          name: mysite
+          name: denco
           property: connectionString
       - key: RAILS_MASTER_KEY
         sync: false
