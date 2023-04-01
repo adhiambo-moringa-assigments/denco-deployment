@@ -1,7 +1,6 @@
 class ApplicationController < ActionController::Base
 
     # Use Puma as the app server
- protect_from_forgery with: :null_session
     before_action :authorized
 
     def encode_token(payload)
