@@ -1,8 +1,5 @@
 Rails.application.routes.draw do
-  resources :bookings
-  resources :services
-  resources :usrs
-
+  
   post '/login', to: "sessions#create"
   post '/signup', to: "usrs#create"
   delete '/logout', to: "sessions#destroy"
