@@ -1,4 +1,7 @@
 class BookingsController < ApplicationController
+   
+    skip_before_action :authorized, only: [:index, :show, :create, :update, :destroy]
+   
     def index
         booking = Booking.all
         render json: booking

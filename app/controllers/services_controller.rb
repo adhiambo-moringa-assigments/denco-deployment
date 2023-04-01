@@ -1,5 +1,7 @@
 class ServicesController < ApplicationController
-    
+
+    skip_before_action :authorized, only: [:index, :show, :create, :update, :destroy]
+
     def index
         service = Service.all
         render json: service
