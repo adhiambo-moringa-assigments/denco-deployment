@@ -3,13 +3,13 @@ class UsrsController < ApplicationController
     
     def index
         user = Usr.all
-        render json: usr, include: [:services, :books]
+        render json: user, include: [:services, :books]
     end
 
     def show
        user = Usr.find_by(id: params[:id])
         # include user's services and books
-        render json: usr, include: [:services, :books]
+        render json: user, include: [:services, :books]
     end
 
     def create
