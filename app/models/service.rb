@@ -1,5 +1,5 @@
 class Service < ApplicationRecord
-    has_many :bookings
-    has_many :usrs, through: :bookings
+    has_many :books
+    has_many :usrs, through: :books
 end
 
